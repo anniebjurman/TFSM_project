@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body {
+    background-color: #F6F6F4;
+    color: #221D23;
+    font-family: 'Quicksand';
+    font-weight: 400;
+    font-size: 16pt;
+}
+
+p {
+    font-size: 16pt;
+    font-weight: 400;
+}
+
+.p_alt {
+    font-size: 24pt;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 24pt;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 18pt;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 16pt;
+    font-weight: 700;
+}
+
+.font_special {
+    font-size: 12pt;
+    font-weight: 400;
+}
+
