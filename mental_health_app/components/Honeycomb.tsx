@@ -1,16 +1,20 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+import styles from '../App.style';
 
 export default function Honeycomb() {
     return (
         <>
-            <View style={[styles.honeycombDefault, styles.honeycombTop]}></View>
-            <View style={[styles.honeycombDefault, styles.honeycombMiddle]}>hej</View>
-            <View style={[styles.honeycombDefault, styles.honeycombBottom]}></View>
+            <View style={[styles2.honeycombDefault, styles2.honeycombTop]}></View>
+            <View style={[styles2.honeycombDefault, styles2.honeycombMiddle]}>
+                <Text style={styles.h1}>Title</Text>
+                <Text style={styles.p}>10 min</Text>
+            </View>
+            <View style={[styles2.honeycombDefault, styles2.honeycombBottom]}></View>
         </>
     );
 }
 
-const styles = StyleSheet.create({
+const styles2 = StyleSheet.create({
     honeycombDefault: {
         width: 0,
         borderColor: 'green',
