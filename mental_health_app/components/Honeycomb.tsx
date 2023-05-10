@@ -1,23 +1,20 @@
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 import styles from '../App.style';
-// import Svg, { Circle, Rect } from 'react-native-svg';
-// TEST
 
 export default function Honeycomb(props: any) {
-    const isFav = props.isFavorite;
 
     return (
-        <View>
+        <>
             <View style={[styles2.honeycombDefault, styles2.honeycombTop]}></View>
             <View style={[styles2.honeycombDefault, styles2.honeycombMiddle]}>
-                {isFav ? (
-                    <></>
+                {props.isFavorite ? (
+                    <Image source={require('../assets/honeycomb/star.png')}></Image>
                 ) : <></>}
                 <Text style={styles.h1}>Title</Text>
                 <Text style={styles.p}>10 min</Text>
             </View>
             <View style={[styles2.honeycombDefault, styles2.honeycombBottom]}></View>
-        </View>
+        </>
     );
 }
 
@@ -58,5 +55,8 @@ const styles2 = StyleSheet.create({
     },
     tmp: {
         backgroundColor: '#E1F4E6'
+    },
+    starIcon: {
+        width: '200%',
     }
 });
