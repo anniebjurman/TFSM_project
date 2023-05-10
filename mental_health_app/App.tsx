@@ -2,7 +2,6 @@ import { View, Text } from 'react-native';
 import styles from './App.style';
 import { useFonts, Quicksand_400Regular, Quicksand_700Bold } from '@expo-google-fonts/quicksand';
 import * as SplashScreen from 'expo-splash-screen';
-import { useCallback } from 'react';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -15,19 +14,13 @@ export default function App() {
   });
 
   // Show loading screen if the fonts are still loading
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
-
-  if (!fontsLoaded) {
-    return null;
+  if(!fontsLoaded){
+    SplashScreen.hideAsync();
   }
-
+  else{  
   // A regular return of the element
   // NOTE: Use <Text> for all text element, and add the right style instead
-  return (
+    return (
     <>
       <View style={[styles.container, styles.body]}>
         <Text style={styles.h1}>Hi!</Text>
@@ -37,4 +30,8 @@ export default function App() {
       </View>
     </>
   );
+  }
+
+
+  
 }
