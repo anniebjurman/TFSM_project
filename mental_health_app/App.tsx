@@ -2,6 +2,7 @@ import { View, Text } from 'react-native';
 import styles from './App.style';
 import { useFonts, Quicksand_400Regular, Quicksand_700Bold } from '@expo-google-fonts/quicksand';
 import * as SplashScreen from 'expo-splash-screen';
+import Honeycomb from './components/Honeycomb';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -17,7 +18,7 @@ export default function App() {
   if(!fontsLoaded){
     SplashScreen.hideAsync();
   }
-  else{  
+  else{
   // A regular return of the element
   // NOTE: Use <Text> for all text element, and add the right style instead
     return (
@@ -31,7 +32,4 @@ export default function App() {
     </>
   );
   }
-
-
-  
 }
