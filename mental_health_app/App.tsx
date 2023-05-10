@@ -14,6 +14,7 @@ export default function App() {
     Quicksand_700Bold
   });
 
+  // HEJHEJ
   // Show loading screen if the fonts are still loading
   if(!fontsLoaded){
     SplashScreen.hideAsync();
