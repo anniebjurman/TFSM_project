@@ -29,8 +29,8 @@ const Theme = ({type, onPress}) => {
         <TouchableOpacity style={styles.box} onPress={onPress}>
             <View style={themeStyle}/>
             <Image style={styles.icon} source={themeIcon}/>
-            <Text style={styles.titleText}>{themeTitle}</Text>
-            <Text style={styles.excercisseText}>{nrExcercisses} Excercisses</Text>
+            <h3>{themeTitle}</h3>
+            <p className="font_special">{nrExcercisses} Excercisses</p>
         </TouchableOpacity>
     )
 }
