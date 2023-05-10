@@ -1,62 +1,43 @@
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, ImageBackground } from 'react-native';
 import styles from '../App.style';
 
 export default function Honeycomb(props: any) {
 
     return (
         <>
-            <View style={[styles2.honeycombDefault, styles2.honeycombTop]}></View>
-            <View style={[styles2.honeycombDefault, styles2.honeycombMiddle]}>
-                {props.isFavorite ? (
-                    <Image source={require('../assets/honeycomb/star.png')}></Image>
-                ) : <></>}
-                <Text style={styles.h1}>Title</Text>
-                <Text style={styles.p}>10 min</Text>
+            <View style={styles2.container}>
+                <ImageBackground style={[styles2.hcImage]} source={require('../assets/honeycomb/hc-green.png')}>
+                    <View style={styles2.starContainer}>
+                        {props.isFavorite ? (
+                            <Image style={[styles2.starIcon]} source={require('../assets/honeycomb/star.png')}></Image>
+                        ) : <></>}
+                    </View>
+                    <Text style={styles.h1}>Title</Text>
+                </ImageBackground>
             </View>
-            <View style={[styles2.honeycombDefault, styles2.honeycombBottom]}></View>
         </>
     );
 }
 
 const styles2 = StyleSheet.create({
-    honeycombDefault: {
-        width: 0,
-        borderColor: '#E1F4E6',
+    container: {
+        width: 140,
+        height: 140,
     },
-    honeycombTop: {
-        borderTopStyle: 'none',
-        borderBottomWidth: 40,
-        borderLeftColor: 'transparent',
-        borderLeftWidth: 72,
-        borderRightColor: 'transparent',
-        borderRightWidth: 72,
-    },
-    honeycombBottom: {
-        borderBottomStyle: 'none',
-        borderTopWidth: 40,
-        borderLeftColor: 'transparent',
-        borderLeftWidth: 72,
-        borderRightColor: 'transparent',
-        borderRightWidth: 72,
-    },
-    honeycombMiddle: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: 144,
-        height: 85,
-        backgroundColor: '#E1F4E6'
-    },
-    shadow: {
-        shadowColor: '#171717',
-        shadowOffset: {width: -2, height: 4},
-        shadowOpacity: 0.2,
-        shadowRadius: 3,
-    },
-    tmp: {
-        backgroundColor: '#E1F4E6'
+    starContainer: {
+        height: 50,
+        width: '100%',
+        paddingTop: 25
     },
     starIcon: {
-        width: '200%',
+        width: '100%',
+        height: '100%',
+        resizeMode: 'contain'
+    },
+    hcImage: {
+        width: '100%',
+        height: '100%',
+        resizeMode: 'cover',
+        alignItems: 'center',
     }
 });
