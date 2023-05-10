@@ -3,12 +3,11 @@ import styles from '../App.style';
 import React, {useState} from 'react';
 
 
-export default function QABubble() {
+export default function QABubble(props) {
     return (
         <View style={styles2.bubble}>
-            <Text style={styles.h3}>Question: How to make friends?</Text>
-            <Text style={styles.p}>Answer: At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum....</Text>
-
+            <Text style={styles.h3}>{props.question}</Text>
+            <Text style={styles.p}>Answer: {props.answer}</Text>
             <SwitchImage/>
         </View>
     )
