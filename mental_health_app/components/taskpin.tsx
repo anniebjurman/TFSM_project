@@ -15,7 +15,7 @@ const TaskPin = ({taskTitle, taskTime, taskNr, onPress}) => {
     }
 
     return(
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onPress}>
             <View style={pinStyles.container}>
                 <View style={pinStyles.droplett}>
                     <View style={pinStyles.textBox}>
