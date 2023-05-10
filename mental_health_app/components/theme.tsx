@@ -3,6 +3,7 @@ import styles from "../App.style";
 
 const Theme = ({type, onPress}) => {
     let themeStyle = null;
+    let iconStyle = null;
     let themeTitle = '';
     let nrExcercisses = 0;
     let themeIcon = null;
@@ -10,28 +11,40 @@ const Theme = ({type, onPress}) => {
     switch (type){
         case 'mindfullness':
             ;(themeStyle = themeStyles.mindfullness),
+            (iconStyle = themeStyles.mindfullnessIcon),
             (themeTitle = 'Mindfullness'),
             (nrExcercisses = 25),
             (themeIcon = require('../assets/mindfullness.png'))
             break
         case 'relaxation':
+            ;(themeStyle = themeStyles.relaxation),
+            (iconStyle = themeStyles.relaxationIcon),
+            (themeTitle = 'Relaxation'),
+            (nrExcercisses = 15),
+            (themeIcon = require('../assets/relaxation.png'))
             break
         case 'sleep':
+
             break
         case 'self-esteem':
+
             break
         case 'accaptance':
+
             break
         case 'movement':
+
             break
     }
 
     return(
         <TouchableOpacity style={themeStyles.box} onPress={onPress}>
             <View style={[themeStyle, themeStyles.shadow]}/>
-            <Image style={themeStyles.icon} source={themeIcon}/>
+            <Image style={iconStyle} source={themeIcon}/>
+            <View style={themeStyles.textBox}>
             <Text style={styles.h3}>{themeTitle}</Text>
             <Text style={styles.p}>{nrExcercisses} Excercisses</Text>
+            </View>
         </TouchableOpacity>
     )
 }
@@ -43,19 +56,19 @@ const themeStyles = StyleSheet.create({
         width: 173,
         height: 173,
         justifyContent: 'center',
-        alignItems: 'center'
-    },
-    icon: {
-        width: 71,
-        height: 59,
-        marginTop: -120,
-        marginBottom: 10
+        alignItems: 'center',
+        margin: 7
     },
     shadow:{
         shadowColor: '#171717',
         shadowOffset: {width: 4, height:0},
         shadowOpacity: 0.2,
         shadowRadius: 3
+    },
+    textBox: {
+        marginBottom:10,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     mindfullness: {
         width:0,
@@ -67,6 +80,29 @@ const themeStyles = StyleSheet.create({
         borderRightColor: "#F6F6F4",
         borderTopColor: "#C6E6F9",
         transform:[{rotate: "90deg"}]
+    },
+    mindfullnessIcon: {
+        width: 71,
+        height: 59,
+        marginTop: -120,
+        marginBottom: 10
+    },
+    relaxation: {
+        width:0,
+        height:0,
+        backgroundColor: "#F6F6F4",
+        borderStyle: "solid",
+        borderRightWidth: 173,
+        borderTopWidth: 173,
+        borderRightColor: "#F6F6F4",
+        borderTopColor: "#F5EAE0",
+        transform:[{rotate: "90deg"}]
+    },
+    relaxationIcon: {
+        width: 61,
+        height: 66,
+        marginTop: -128,
+        marginBottom: 10
     },
 
 
