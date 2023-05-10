@@ -1,6 +1,7 @@
 import { StyleSheet, View, Text } from 'react-native';
 import styles from '../App.style';
 // import Svg, { Circle, Rect } from 'react-native-svg';
+// TEST
 
 export default function Honeycomb(props: any) {
     const isFav = props.isFavorite;
