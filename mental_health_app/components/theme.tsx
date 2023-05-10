@@ -1,4 +1,5 @@
 import { StyleSheet, Text, Image, TouchableOpacity, View } from 'react-native'
+import styles from "../App.style";
 
 const Theme = ({type, onPress}) => {
     let themeStyle = null;
@@ -8,7 +9,7 @@ const Theme = ({type, onPress}) => {
 
     switch (type){
         case 'mindfullness':
-            ;(themeStyle = styles.mindfullness),
+            ;(themeStyle = themeStyles.mindfullness),
             (themeTitle = 'Mindfullness'),
             (nrExcercisses = 25),
             (themeIcon = require('../assets/mindfullness.png'))
@@ -26,40 +27,44 @@ const Theme = ({type, onPress}) => {
     }
 
     return(
-        <TouchableOpacity style={styles.box} onPress={onPress}>
-            <View style={themeStyle}/>
-            <Image style={styles.icon} source={themeIcon}/>
-            <h3>{themeTitle}</h3>
-            <p className="font_special">{nrExcercisses} Excercisses</p>
+        <TouchableOpacity style={themeStyles.box} onPress={onPress}>
+            <View style={[themeStyle, themeStyles.shadow]}/>
+            <Image style={themeStyles.icon} source={themeIcon}/>
+            <Text style={styles.h3}>{themeTitle}</Text>
+            <Text style={styles.p}>{nrExcercisses} Excercisses</Text>
         </TouchableOpacity>
     )
 }
 
 export default Theme
 
-const styles = StyleSheet.create({
+const themeStyles = StyleSheet.create({
     box:{
-        width: 100,
-        height: 100,
-        backgroundColor: '#F6F6F4'
+        width: 173,
+        height: 173,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     icon: {
-
+        width: 71,
+        height: 59,
+        marginTop: -120,
+        marginBottom: 10
     },
-    titleText: {
-
-    },
-    excercisseText: {
-
+    shadow:{
+        shadowColor: '#171717',
+        shadowOffset: {width: 4, height:0},
+        shadowOpacity: 0.2,
+        shadowRadius: 3
     },
     mindfullness: {
         width:0,
         height:0,
-        backgroundColor: "transparent",
+        backgroundColor: "#F6F6F4",
         borderStyle: "solid",
-        borderRightWidth: 100,
-        borderTopWidth: 100,
-        borderRightColor: "transparent",
+        borderRightWidth: 173,
+        borderTopWidth: 173,
+        borderRightColor: "#F6F6F4",
         borderTopColor: "#C6E6F9",
         transform:[{rotate: "90deg"}]
     },
