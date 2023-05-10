@@ -45,7 +45,11 @@ const Theme = ({type, onPress}) => {
             (themeIcon = require('../assets/accaptance.png'))
             break
         case 'movement':
-
+            ;(themeStyle = themeStyles.movement),
+            (iconStyle = themeStyles.movementIcon),
+            (themeTitle = 'Movement'),
+            (nrExcercisses = 20),
+            (themeIcon = require('../assets/movement.png'))
             break
     }
 
@@ -147,8 +151,8 @@ const themeStyles = StyleSheet.create({
     selfEsteemIcon: {
         width: 68,
         height: 71,
-        marginTop: -123,
-        marginLeft: 10,
+        marginTop: -125,
+        marginLeft: 5,
         marginBottom: 3
     },
     acceptance: {
@@ -165,8 +169,25 @@ const themeStyles = StyleSheet.create({
     acceptanceIcon: {
         width: 68,
         height: 63,
-        marginTop: -115,
+        marginTop: -118,
         marginBottom: 3
+    },
+    movement: {
+        width:0,
+        height:0,
+        backgroundColor: "#F6F6F4",
+        borderStyle: "solid",
+        borderRightWidth: 173,
+        borderTopWidth: 173,
+        borderRightColor: "#F6F6F4",
+        borderTopColor: "#E1F4E6",
+        transform:[{rotate: "90deg"}]
+    },
+    movementIcon: {
+        width: 67,
+        height: 67,
+        marginTop: -128,
+        marginBottom: 10
     },
 
 })
