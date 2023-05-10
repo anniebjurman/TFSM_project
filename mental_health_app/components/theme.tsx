@@ -24,10 +24,18 @@ const Theme = ({type, onPress}) => {
             (themeIcon = require('../assets/relaxation.png'))
             break
         case 'sleep':
-
+            ;(themeStyle = themeStyles.sleep),
+            (iconStyle = themeStyles.sleepIcon),
+            (themeTitle = 'Sleep'),
+            (nrExcercisses = 10),
+            (themeIcon = require('../assets/sleep.png'))
             break
         case 'self-esteem':
-
+            ;(themeStyle = themeStyles.selfEsteem),
+            (iconStyle = themeStyles.selfEsteemIcon),
+            (themeTitle = 'Self esteem'),
+            (nrExcercisses = 35),
+            (themeIcon = require('../assets/self-esteem.png'))
             break
         case 'accaptance':
 
@@ -104,6 +112,40 @@ const themeStyles = StyleSheet.create({
         marginTop: -128,
         marginBottom: 10
     },
-
+    sleep: {
+        width:0,
+        height:0,
+        backgroundColor: "#F6F6F4",
+        borderStyle: "solid",
+        borderRightWidth: 173,
+        borderTopWidth: 173,
+        borderRightColor: "#F6F6F4",
+        borderTopColor: "#E5DEF8",
+        transform:[{rotate: "90deg"}]
+    },
+    sleepIcon: {
+        width: 53,
+        height: 68,
+        marginTop: -128,
+        marginBottom: 10
+    },
+    selfEsteem: {
+        width:0,
+        height:0,
+        backgroundColor: "#F6F6F4",
+        borderStyle: "solid",
+        borderRightWidth: 173,
+        borderTopWidth: 173,
+        borderRightColor: "#F6F6F4",
+        borderTopColor: "#F4E2F4",
+        transform:[{rotate: "90deg"}]
+    },
+    selfEsteemIcon: {
+        width: 68,
+        height: 71,
+        marginTop: -123,
+        marginLeft: 10,
+        marginBottom: 3
+    },
 
 })
