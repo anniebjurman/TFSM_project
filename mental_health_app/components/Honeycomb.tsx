@@ -4,6 +4,7 @@ import styles from '../App.style';
 export default function Honeycomb(props: any) {
     const favorite: boolean = props.isFavorite;
     const theme: string = props.theme;
+    const title: string = props.title;
     var backgroundPath;
     var randomNumber: number = Math.floor(Math.random() * 5) + 1 ;
 
@@ -133,7 +134,7 @@ export default function Honeycomb(props: any) {
                             <Image style={[styles2.starIcon]} source={require('../assets/honeycomb/star.png')}></Image>
                         ) : <></>}
                     </View>
-                    <Text style={styles.h1}>Title</Text>
+                    <Text style={[styles.h2, styles2.title]}>{title}</Text>
                 </ImageBackground>
             </View>
         </>
@@ -146,9 +147,9 @@ const styles2 = StyleSheet.create({
         height: 150,
     },
     starContainer: {
-        height: 60,
+        height: 50,
         width: '100%',
-        paddingTop: 35
+        paddingTop: 25,
     },
     starIcon: {
         width: '100%',
@@ -160,5 +161,8 @@ const styles2 = StyleSheet.create({
         height: '100%',
         resizeMode: 'cover',
         alignItems: 'center',
+    },
+    title: {
+        paddingTop: 10
     }
 });
