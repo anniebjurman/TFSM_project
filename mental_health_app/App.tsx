@@ -27,7 +27,6 @@ export default function App() {
         <Text style={styles.p}>Open up App.js to start working on your app!</Text>
         <Text style={styles.h2}>Welcome</Text>
         <Text style={styles.p}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, doloremque ad a corrupti</Text>
-        <Honeycomb isFavorite={true}></Honeycomb>
       </View>
     </>
   );
