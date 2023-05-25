@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, ScrollView } from 'react-native';
 import styles from '../App.style';
 import Honeycomb from '../components/Honeycomb';
 
@@ -18,6 +18,12 @@ export default function HoneycombPage(props: any) {
                 {title: "Relaxation", theme: "sleep", favorite: true},
                 {title: "Aerobics", theme: "sleep", favorite: false},
                 {title: "Rest", theme: "sleep", favorite: true},
+                {title: "Breathe 2.0", theme: "sleep", favorite: false},
+                {title: "Aerobics 2.0", theme: "sleep", favorite: false},
+                {title: "Rest 2.0", theme: "sleep", favorite: true},
+                {title: "Breathe 2.0", theme: "sleep", favorite: false},
+                {title: "Aerobics 2.0", theme: "sleep", favorite: false},
+                {title: "Rest 2.0", theme: "sleep", favorite: true},
                 {title: "Breathe 2.0", theme: "sleep", favorite: false},
                 {title: "Aerobics 2.0", theme: "sleep", favorite: false},
                 {title: "Rest 2.0", theme: "sleep", favorite: true},
@@ -57,11 +63,13 @@ export default function HoneycombPage(props: any) {
                 <Text style={styles.p}>{exercises.length} exercises</Text>
                 <Text style={[styles.p, styles2.description]}>At vero eos et accusamus et iusto odio dignissimos ducimus.</Text>
             </View>
-            <View style={styles2.exerciseContainer}>
-                {exercises.map((hc: any, index: any) => (
-                    <Honeycomb isFavorite={hc.favorite} theme={hc.theme} title={hc.title} key={index}></Honeycomb>
-                ))}
-            </View>
+            <ScrollView style={styles2.exerciseContainer} horizontal={true} showsHorizontalScrollIndicator={false}>
+                <View style={styles2.exerciseInnerCont}>
+                    {exercises.map((hc: any, index: any) => (
+                        <Honeycomb isFavorite={hc.favorite} theme={hc.theme} title={hc.title} key={index}></Honeycomb>
+                    ))}
+                </View>
+            </ScrollView>
         </>
     );
 }
@@ -74,9 +82,17 @@ const styles2 = StyleSheet.create({
     },
     exerciseContainer: {
         margin: 20,
+        width: '100%',
+    },
+    exerciseInnerCont: {
         // backgroundColor: "pink",
         flexDirection: "row",
-        flexWrap: "wrap"
+        rowGap: 10,
+        columnGap: 10,
+        flexWrap: "wrap",
+        width: "1000px",
+        paddingLeft: 20,
+        height: "70%"
     },
     description: {
         marginTop: 10

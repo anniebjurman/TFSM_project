@@ -2,6 +2,7 @@ import { View, Text, Image } from 'react-native';
 import styles from './App.style';
 import { useFonts, Quicksand_400Regular, Quicksand_700Bold } from '@expo-google-fonts/quicksand';
 import * as SplashScreen from 'expo-splash-screen';
+import HoneycombPage from './pages/HoneycombPage';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -23,10 +24,11 @@ export default function App() {
     return (
     <>
       <View style={[styles.container, styles.body]}>
-        <Text style={styles.h1}>Hi!</Text>
+        {/* <Text style={styles.h1}>Hi!</Text>
         <Text style={styles.p}>Open up App.js to start working on your app!</Text>
         <Text style={styles.h2}>Welcome</Text>
-        <Text style={styles.p}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, doloremque ad a corrupti</Text>
+        <Text style={styles.p}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, doloremque ad a corrupti</Text> */}
+        <HoneycombPage theme="sleep"></HoneycombPage>
       </View>
     </>
   );
