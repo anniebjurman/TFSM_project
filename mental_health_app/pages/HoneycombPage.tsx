@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, Image } from 'react-native';
 import styles from '../App.style';
 import Honeycomb from '../components/Honeycomb';
 
@@ -60,7 +60,7 @@ export default function HoneycombPage(props: any) {
         <>
             <View style={styles2.textContainer}>
                 <Text style={styles.h1}>{Capitalize(theme)}</Text>
-                <Text style={styles.p}>{exercises.length} exercises</Text>
+                <Text style={styles.fontSpecial}>{exercises.length} exercises</Text>
                 <Text style={[styles.p, styles2.description]}>At vero eos et accusamus et iusto odio dignissimos ducimus.</Text>
             </View>
             <ScrollView style={styles2.exerciseContainer} horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -96,5 +96,8 @@ const styles2 = StyleSheet.create({
     },
     description: {
         marginTop: 10
+    },
+    backArrow: {
+        // width: "100px"
     }
 });
