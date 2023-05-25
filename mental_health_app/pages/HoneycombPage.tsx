@@ -6,6 +6,7 @@ import Honeycomb from '../components/Honeycomb';
 export default function HoneycombPage(props: any) {
     const theme: string = props.theme;
     let exercises: any;
+    let description: string;
 
     function Capitalize(str: string){
         return str.charAt(0).toUpperCase() + str.slice(1);
@@ -30,7 +31,8 @@ export default function HoneycombPage(props: any) {
                 {title: "Breathe 2.0", theme: "sleep", favorite: false},
                 {title: "Aerobics 2.0", theme: "sleep", favorite: false},
                 {title: "Rest 2.0", theme: "sleep", favorite: true},
-                ]
+                ];
+            description = "Discover different exercises that is designed to improve your sleep quality.";
             break;
         case 'movement':
             exercises = [
@@ -41,7 +43,8 @@ export default function HoneycombPage(props: any) {
                 {title: "Run 2.0", theme: "movement", favorite: false},
                 {title: "Aerobics", theme: "movement", favorite: false},
                 {title: "Gymnastics", theme: "movement", favorite: true},
-                ]
+                ];
+            description = "Explore the power of movement with these exercises designed to improve physical fitness and invigorate your body.";
             break;
         default:
             exercises = [
@@ -52,16 +55,20 @@ export default function HoneycombPage(props: any) {
                 {title: "Title 5", theme: "mindfulness", favorite: false},
                 {title: "Title 6", theme: "relaxation", favorite: false},
                 {title: "Title 7", theme: "self-esteem", favorite: true},
-                ]
+                ];
+            description = "At vero eos et accusamus et iusto odio dignissimos ducimus.";
 
     }
 
     return (
         <>
             <View style={styles2.textContainer}>
+                <View style={styles2.backArrowContainer}>
+                    <Image style={[styles2.backArrow]} source={require('../assets/back_arrow.png')}></Image>
+                </View>
                 <Text style={styles.h1}>{Capitalize(theme)}</Text>
                 <Text style={styles.fontSpecial}>{exercises.length} exercises</Text>
-                <Text style={[styles.p, styles2.description]}>At vero eos et accusamus et iusto odio dignissimos ducimus.</Text>
+                <Text style={[styles.p, styles2.description]}>{description}</Text>
             </View>
             <ScrollView style={styles2.exerciseContainer} horizontal={true} showsHorizontalScrollIndicator={false}>
                 <View style={styles2.exerciseInnerCont}>
@@ -98,6 +105,15 @@ const styles2 = StyleSheet.create({
         marginTop: 10
     },
     backArrow: {
-        // width: "100px"
+        width: '17px',
+        height: '100%',
+        resizeMode: 'contain'
+    },
+    backArrowContainer: {
+        width: "100%",
+        height: "20px",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        marginBottom: "10px"
     }
 });
