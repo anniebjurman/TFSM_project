@@ -4,7 +4,6 @@ import Theme from "./theme"
 
 const ThemePage = ({}) => {
     return(
-    
         <View style={themePageStyles.col}>
             <View style={themePageStyles.title}>
                 <Text style={styles.h1}>Themes</Text>
@@ -42,6 +41,7 @@ const themePageStyles = StyleSheet.create({
     },
     col: {
         flex: 4,
-        flexDirection: 'column'
+        flexDirection: 'column',
+        justifyContent: 'flex-start'
     }
 });
