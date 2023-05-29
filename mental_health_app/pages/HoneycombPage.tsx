@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet, ScrollView, Image, ImageBackground } from 'react-native';
 import styles from '../App.style';
 import Honeycomb from '../components/Honeycomb';
+import Header from '../components/Header';
 
 
 export default function HoneycombPage(props: any) {
@@ -181,6 +182,7 @@ export default function HoneycombPage(props: any) {
 
     return (
         <>
+            <Header/>
             <View style={styles2.textContainer}>
                 <RenderBackArrow></RenderBackArrow>
                 <Text style={styles.h1}>{Capitalize(theme)}</Text>

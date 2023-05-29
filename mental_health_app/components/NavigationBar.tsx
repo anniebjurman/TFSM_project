@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, Image, TouchableOpacity, View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ThemePage from './ThemePage';
+import HoneycombPage from '../pages/HoneycombPage';
 import NavigationBarButton from './NavigationBarButton';
 
 const Tab = createBottomTabNavigator();
@@ -15,7 +16,7 @@ function NavigationBar() {
         tabBarStyle: navigationBarStyles.navBar
         }}>
       
-      <Tab.Screen name="To-do" component={ThemePage} options={{
+      <Tab.Screen name="To-do" children={()=> <HoneycombPage theme='todo'/>} options={{
         tabBarIcon: ({focused, color, size}) => (
           <Image style={{width: 39, height: 39, marginLeft: 30}} source={focused ? require('../assets/ToDoActive.png') : require('../assets/ToDoInactive.png')}/>
         ),
