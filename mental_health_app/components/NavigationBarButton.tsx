@@ -11,7 +11,7 @@ const NavigationBarButton = (props, image) => {
         return(
             <View style={NavigationBarButtonStyle.btnWrapper}>
                 <TouchableOpacity onPress={onPress} style={NavigationBarButtonStyle.active}>
-                    <Text>{children}</Text>
+                    <View>{children}</View>
                 </TouchableOpacity>
             </View>
         );
@@ -19,7 +19,7 @@ const NavigationBarButton = (props, image) => {
         return(
             <View style={NavigationBarButtonStyle.btnWrapper}>
                 <TouchableOpacity onPress={onPress} style={NavigationBarButtonStyle.inactive}>
-                    <Text>{children}</Text>
+                    <View>{children}</View>
                 </TouchableOpacity>
             </View>
         );
