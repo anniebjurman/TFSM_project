@@ -144,7 +144,7 @@ export default function Honeycomb(props: any) {
 const styles2 = StyleSheet.create({
     container: {
         width: 140,
-        height: 150,
+        height: 150
     },
     starContainer: {
         height: 50,
