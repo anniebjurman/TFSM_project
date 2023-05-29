@@ -1,8 +1,11 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
+import Svg, {Path} from 'react-native-svg';
 
-const NavigationBarButton = (props) => {
-    const {children, accessibilityState, onPress} = props;
+const NavigationBarButton = (props, image) => {
+    const {children, accessibilityState, onPress, name} = props;
+    let iconPath = '';
+    let style = null;
 
     if(accessibilityState.selected){
         return(
