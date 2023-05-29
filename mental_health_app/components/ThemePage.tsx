@@ -34,7 +34,7 @@ const themePageStyles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         marginLeft: 23,
-        marginTop: 30,
+        marginTop: 0,
         marginBottom: -30
     },
     row: {
