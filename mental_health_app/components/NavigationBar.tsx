@@ -23,7 +23,9 @@ function NavigationBar() {
 
       <Tab.Screen name="Themes" component={ThemePage} options={{
         tabBarIcon: ({focused, color, size}) => (
-            <Image style={{width: 60, height: 60, marginBottom:20}} source={focused ? require('../assets/ThemesActive.png') : require('../assets/ThemesInactive.png')}/>
+            <View style={navigationBarStyles.themeButton}>
+              <Image style={{width: 60, height: 60}} source={focused ? require('../assets/ThemesActive.png') : require('../assets/ThemesInactive.png')}/>
+            </View>
         ),
         tabBarButton: props => <NavigationBarButton {...props}/>}}/>
 
@@ -40,10 +42,25 @@ function NavigationBar() {
 export default NavigationBar;
 
 const navigationBarStyles = StyleSheet.create({
-    navBar: {
+  themeButton: {
+    backgroundColor: '#F6F6F4',
+    marginBottom:20,
+    height: 80,
+    width: 80,
+    padding: 10,
+    borderRadius:50,
+  },
+  navBar: {
         position: 'absolute',
         backgroundColor: '#F6F6F4',
         paddingBottom: 35,
-        paddingTop:30
+        paddingTop:30,
+        borderColor: '#F6F6F4',
+        shadowOffset: {
+          width: 0,
+          height: 12,
+      },
+      shadowOpacity: 0.2,
+      shadowRadius: 16.0,
     }
 });

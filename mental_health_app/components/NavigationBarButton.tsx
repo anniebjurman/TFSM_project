@@ -2,15 +2,13 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
 
-const NavigationBarButton = (props, image) => {
+const NavigationBarButton = (props) => {
     const {children, accessibilityState, onPress, name} = props;
-    let iconPath = '';
-    let style = null;
 
     if(accessibilityState.selected){
         return(
             <View style={NavigationBarButtonStyle.btnWrapper}>
-                <TouchableOpacity onPress={onPress} style={NavigationBarButtonStyle.active}>
+                <TouchableOpacity activeOpacity={1} onPress={onPress} style={NavigationBarButtonStyle.active}>
                     <View>{children}</View>
                 </TouchableOpacity>
             </View>
@@ -18,7 +16,7 @@ const NavigationBarButton = (props, image) => {
     } else {
         return(
             <View style={NavigationBarButtonStyle.btnWrapper}>
-                <TouchableOpacity onPress={onPress} style={NavigationBarButtonStyle.inactive}>
+                <TouchableOpacity activeOpacity={1} onPress={onPress} style={NavigationBarButtonStyle.inactive}>
                     <View>{children}</View>
                 </TouchableOpacity>
             </View>
@@ -38,11 +36,11 @@ const NavigationBarButtonStyle = StyleSheet.create({
     active:{
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     inactive: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     }
 });
