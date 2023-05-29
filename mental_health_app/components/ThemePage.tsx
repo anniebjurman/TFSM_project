@@ -44,6 +44,7 @@ const themePageStyles = StyleSheet.create({
     col: {
         flex: 4,
         flexDirection: 'column',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+        marginBottom: 110
     }
 });

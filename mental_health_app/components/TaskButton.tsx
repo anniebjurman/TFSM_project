@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from 'react-native';
+import AppStyle from "../App.style";
 
 interface Props {
   border: string;
@@ -37,7 +38,7 @@ const TaskButton: React.FC<Props> = ({
          alignContent: 'center'
       }}
     >
-      <p style={styles.text}>{text}</p>
+      <p style={AppStyle.p}>{text}</p>
     </button>
    
     </>

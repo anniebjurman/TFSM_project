@@ -6,6 +6,7 @@ import HoneycombPage from '../pages/HoneycombPage';
 import NavigationBarButton from './NavigationBarButton';
 import {createStackNavigator} from '@react-navigation/stack';
 import StackNav from './StackNav';
+import componentMix from './componentMix';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,7 +33,7 @@ function NavigationBar() {
         ),
         tabBarButton: props => <NavigationBarButton {...props}/>}}/>
 
-      <Tab.Screen name="QA" component={ThemePage} options={{
+      <Tab.Screen name="QA" component={componentMix} options={{
         tabBarIcon: ({focused, color, size}) => (
           <Image style={{width: 39, height: 39, marginRight: 30}} source={focused ? require('../assets/QaActive.png') : require('../assets/QaInactive.png')}/>
         ),
