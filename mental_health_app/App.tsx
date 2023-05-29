@@ -3,8 +3,13 @@ import { useFonts, Quicksand_400Regular, Quicksand_700Bold } from '@expo-google-
 import * as SplashScreen from 'expo-splash-screen';
 import {NavigationContainer } from '@react-navigation/native';
 import NavigationBar from './components/NavigationBar'
+import {createStackNavigator} from '@react-navigation/stack';
+import HoneycombPage from './pages/HoneycombPage';
+
 
 SplashScreen.preventAutoHideAsync();
+
+
 
 export default function App() {
 
@@ -24,6 +29,9 @@ export default function App() {
     return (
       <NavigationContainer>
         <NavigationBar/>
+        {/* <Stack.Navigator>
+          <Stack.Screen name='Relaxation' component={()=> <HoneycombPage theme='relaxation'/>}/>
+        </Stack.Navigator> */}
       </NavigationContainer>
   );
   }

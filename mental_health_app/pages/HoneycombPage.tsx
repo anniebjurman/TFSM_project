@@ -206,6 +206,7 @@ export default function HoneycombPage(props: any) {
 const styles2 = StyleSheet.create({
     textContainer: {
         margin: 20,
+        marginTop: 0
     },
     exerciseContainer: {
         margin: 20,
@@ -246,6 +247,6 @@ const styles2 = StyleSheet.create({
         position: "absolute",
         zIndex: -1,
         right: 0,
-        bottom: 0,
+        bottom: 60,
     }
 });

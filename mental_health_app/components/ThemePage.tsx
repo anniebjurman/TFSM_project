@@ -3,7 +3,7 @@ import styles from "../App.style";
 import Theme from "./theme";
 import Header from "./Header"
 
-const ThemePage = ({}) => {
+const ThemePage = ({navigation}) => {
     return(
         <View style={themePageStyles.col}>
             <Header/>
@@ -11,16 +11,16 @@ const ThemePage = ({}) => {
                 <Text style={styles.h1}>Themes</Text>
             </View>
             <View style={themePageStyles.row}>
-                <Theme type={'relaxation'} onPress={''} />
-                <Theme type={'mindfullness'} onPress={''} />
+                <Theme type={'relaxation'} onPress={()=>navigation.navigate('Relaxation')} />
+                <Theme type={'mindfullness'} onPress={()=>navigation.navigate('Mindfulness')} />
             </View>
             <View style={themePageStyles.row}>
-                <Theme type={'acceptance'} onPress={''} />
-                <Theme type={'sleep'} onPress={''} />
+                <Theme type={'acceptance'} onPress={()=>navigation.navigate('Acceptance')} />
+                <Theme type={'sleep'} onPress={()=>navigation.navigate('Sleep')} />
             </View>
             <View style={themePageStyles.row}>
-                <Theme type={'self-esteem'} onPress={''} />
-                <Theme type={'movement'} onPress={''} />
+                <Theme type={'self-esteem'} onPress={()=>navigation.navigate('Self-esteem')} />
+                <Theme type={'movement'} onPress={()=>navigation.navigate('Movement')} />
             </View>
         </View>
     

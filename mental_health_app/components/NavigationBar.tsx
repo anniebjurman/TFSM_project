@@ -4,25 +4,27 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ThemePage from './ThemePage';
 import HoneycombPage from '../pages/HoneycombPage';
 import NavigationBarButton from './NavigationBarButton';
+import {createStackNavigator} from '@react-navigation/stack';
+import StackNav from './StackNav';
 
 const Tab = createBottomTabNavigator();
 
 function NavigationBar() {
   return (
+    
     <Tab.Navigator initialRouteName="Themes" screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
         tabBarActiveTintColor: '#E84855',
         tabBarStyle: navigationBarStyles.navBar
         }}>
-      
       <Tab.Screen name="To-do" children={()=> <HoneycombPage theme='todo'/>} options={{
         tabBarIcon: ({focused, color, size}) => (
           <Image style={{width: 39, height: 39, marginLeft: 30}} source={focused ? require('../assets/ToDoActive.png') : require('../assets/ToDoInactive.png')}/>
         ),
       tabBarButton: props => <NavigationBarButton {...props}/>}}/>
 
-      <Tab.Screen name="Themes" component={ThemePage} options={{
+      <Tab.Screen name="Themes" component={StackNav} options={{
         tabBarIcon: ({focused, color, size}) => (
             <View style={navigationBarStyles.themeButton}>
               <Image style={{width: 60, height: 60}} source={focused ? require('../assets/ThemesActive.png') : require('../assets/ThemesInactive.png')}/>
