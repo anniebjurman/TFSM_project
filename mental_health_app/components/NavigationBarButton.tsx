@@ -9,15 +9,19 @@ const NavigationBarButton = (props, image) => {
 
     if(accessibilityState.selected){
         return(
-            <TouchableOpacity onPress={onPress} style={NavigationBarButtonStyle.active}>
-                <Text>{children}</Text>
-            </TouchableOpacity>
+            <View style={NavigationBarButtonStyle.btnWrapper}>
+                <TouchableOpacity onPress={onPress} style={NavigationBarButtonStyle.active}>
+                    <Text>{children}</Text>
+                </TouchableOpacity>
+            </View>
         );
     } else {
         return(
-            <TouchableOpacity onPress={onPress} style={NavigationBarButtonStyle.inactive}>
-                <Text>{children}</Text>
-            </TouchableOpacity>
+            <View style={NavigationBarButtonStyle.btnWrapper}>
+                <TouchableOpacity onPress={onPress} style={NavigationBarButtonStyle.inactive}>
+                    <Text>{children}</Text>
+                </TouchableOpacity>
+            </View>
         );
     }
 
@@ -27,6 +31,10 @@ const NavigationBarButton = (props, image) => {
 export default NavigationBarButton;
 
 const NavigationBarButtonStyle = StyleSheet.create({
+    btnWrapper: {
+        flex: 1,
+        alignItems: 'center'
+    },
     active:{
         flex: 1,
         justifyContent: 'center',
