@@ -1,8 +1,7 @@
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import styles from './App.style';
 import { useFonts, Quicksand_400Regular, Quicksand_700Bold } from '@expo-google-fonts/quicksand';
 import * as SplashScreen from 'expo-splash-screen';
-import Honeycomb from './components/Honeycomb';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -14,14 +13,13 @@ export default function App() {
     Quicksand_700Bold
   });
 
-  // HEJHEJ
   // Show loading screen if the fonts are still loading
   if(!fontsLoaded){
     SplashScreen.hideAsync();
   }
   else{
   // A regular return of the element
-  // NOTE: Use <Text> for all text element, and add the right style instead
+  // NOTE: Use <Text> for all text element, and add the right style for h1 etc instead
     return (
     <>
       <View style={[styles.container, styles.body]}>
