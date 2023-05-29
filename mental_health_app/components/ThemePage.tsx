@@ -1,10 +1,12 @@
 import { StyleSheet, Text, Image, TouchableOpacity, View } from 'react-native'
 import styles from "../App.style";
-import Theme from "./theme"
+import Theme from "./theme";
+import Header from "./Header"
 
 const ThemePage = ({}) => {
     return(
         <View style={themePageStyles.col}>
+            <Header/>
             <View style={themePageStyles.title}>
                 <Text style={styles.h1}>Themes</Text>
             </View>
